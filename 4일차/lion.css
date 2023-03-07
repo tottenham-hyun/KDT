@@ -1,0 +1,27 @@
+.skyblue{
+    display: inline-block;
+    width: 800px;
+    height: 500px;
+    background-color: skyblue;
+    background-image: url('https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a');
+}
+
+.bg{
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+.bg-short{
+    background-position-x: 100px;
+    background-position-y: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.bg-long{
+    background-position-x: 100px;
+    background-position-y: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

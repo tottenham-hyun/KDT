@@ -1,0 +1,54 @@
+.container{
+    width: 500px;
+    height: 500px;
+    background-color: beige;
+}
+
+.box{
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.item1{
+    position: absolute;
+    background-color: red;
+    z-index: 3;
+}
+
+.item2{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: orange;
+    z-index: 1;
+    
+}
+
+.item3{
+    top: 60px;
+    left: 60px;
+    background-color: green;
+    z-index: 2;
+}
+
+.box{
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.background{
+    /* background: color image repeat position/size순으로 가능하나 따로 쓰는걸 추천; */
+    background-color: aqua;
+    background: url('./img/small_img.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    /* 숫자값을 하나만 입력하면 x축에 대해서만 적용 */
+    background-position: center;
+
+    background-size: auto; /* default 값 */
+    background-size: 50px;
+}
