@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/32768caf1d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    * {
+      color: white;
+    }
+    .container {
+      display: flex;
+      background-color: pink;
+    }
+
+    ul {
+      display: flex;
+      margin-left: auto;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ul li {
+      margin-right: 80px;
+    }
+    li {
+      list-style: none;
+    }
+    button {
+      display: none;
+    }
+
+    @media screen and (max-width: 992px) {
+      * {
+        color: black;
+      }
+      .container {
+        display: block;
+      }
+      ul {
+        display: block;
+      }
+      button {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+      }
+      .logo {
+        background-color: purple;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <h1>LOGO</h1>
+      </div>
+
+      <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+      </ul>
+      <button>
+        <i class="fa-solid fa-list"></i>
+      </button>
+    </div>
+  </body>
+</html>

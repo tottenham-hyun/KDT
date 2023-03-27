@@ -1,0 +1,42 @@
+.hot {
+  font-size: 100px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+.container {
+  background-color: beige;
+}
+
+.carousel-inner {
+  opacity: 0.8;
+}
+
+.carousel-control-prev-icon {
+  background-color: black;
+}
+
+.carousel-control-next-icon {
+  background-color: black;
+}
+
+.right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.form_box {
+  width: 700px;
+  height: 400px;
+  border-radius: 20px;
+  background-color: beige;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
