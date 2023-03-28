@@ -187,3 +187,103 @@ function sub(n, cb) {
 //     console.log("실패");
 //     console.log(error);
 //   });
+
+function call(name) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log(name);
+      resolve(name);
+    }, 1000);
+  });
+}
+
+function back() {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log("back");
+      resolve("back");
+    }, 1000);
+  });
+}
+
+function hell() {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("callback hell");
+    }, 1000);
+  });
+}
+
+call("kim")
+  .then(function (result) {
+    console.log(result + "반가워");
+    return back();
+  })
+  .then(function (result) {
+    console.log(result + "를 실행했구나");
+    return hell();
+  })
+  .then(function (result) {
+    console.log("여기는" + result);
+  });
+
+// function chgRed() {
+//   return new Promise(function (resolve, rejected) {
+//     setTimeout(function () {
+//       resolve("red");
+//     }, 1000);
+//   });
+// }
+
+// function chgOrange() {
+//   return new Promise(function (resolve, rejected) {
+//     setTimeout(function () {
+//       resolve("orange");
+//     }, 1000);
+//   });
+// }
+
+// function chgYellow() {
+//   return new Promise(function (resolve, rejected) {
+//     setTimeout(function () {
+//       resolve("yellow");
+//     }, 1000);
+//   });
+// }
+
+// function chgGreen() {
+//   return new Promise(function (resolve, rejected) {
+//     setTimeout(function () {
+//       resolve("green");
+//     }, 1000);
+//   });
+// }
+
+// function chgBlue() {
+//   return new Promise(function (resolve, rejected) {
+//     setTimeout(function () {
+//       resolve("blue");
+//     }, 1000);
+//   });
+// }
+
+// chgRed()
+//   .then(function (result) {
+//     document.querySelector("body").style.backgroundColor = result;
+//     return chgOrange();
+//   })
+//   .then(function (result) {
+//     document.querySelector("body").style.backgroundColor = result;
+//     return chgYellow();
+//   })
+//   .then(function (result) {
+//     document.querySelector("body").style.backgroundColor = result;
+//     return chgGreen();
+//   })
+//   .then(function (result) {
+//     document.querySelector("body").style.backgroundColor = result;
+//     return chgBlue();
+//   })
+//   .then(function (result) {
+//     document.querySelector("body").style.backgroundColor = result;
+//   });
