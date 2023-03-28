@@ -7,6 +7,25 @@
     <title>FORM</title>
   </head>
   <body>
-    <h1>폼 실습을 해보자!</h1>
+    <h1><%= title %></h1>
+
+    <h2>GET요청</h2>
+    <form action="/getForm" method="get" name="login1">
+      <input type="text" name="id" placeholder="id" />
+      <input type="password" name="pw" placeholder="pw" />
+      <button type="submit">제출</button>
+    </form>
+
+    <h2>POST요청</h2>
+    <form action="/postForm" method="post" name="login2">
+      <input type="text" name="id2" placeholder="id" />
+      <input type="password" name="pw2" placeholder="pw" />
+      <button type="submit">제출</button>
+    </form>
+
+    <script>
+      console.log(document.froms("login1"));
+      console.log(document.froms("login2"));
+    </script>
   </body>
 </html>
