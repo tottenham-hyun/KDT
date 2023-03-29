@@ -21,12 +21,12 @@ app.get("/", function (req, res) {
 
 app.get("/getForm", function (req, res) {
   console.log(req.query);
-  res.send("get 요청성공");
+  res.render("result", { title: "get 요청 폼 결과 확인하기", id: req.query.id, pw: req.query.pw });
 });
 
 app.post("/postForm", function (req, res) {
   console.log(req.body.id2, req.body.pw2);
-  res.send("post 요청성공");
+  res.render("result", { title: "post 요청 폼 결과 확인하기", id: req.body.id2, pw: req.body.pw2 });
 });
 
 app.listen(PORT, function () {
