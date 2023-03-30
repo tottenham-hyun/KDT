@@ -16,7 +16,16 @@
 
   <body>
     <h1><%= title %></h1>
-    <div><span><%= id %> </span>님 환영합니다!</div>
-    <div>비밀번호는 <span><%= pw %></span>이군요!!</div>
+    <ul>
+      <li>이름:<%= name %></li>
+      <li>성별:<%= gender %></li>
+      <li>생일:<%= year+'-'+month+'-'+day%></li>
+      <li>취미:<%= hobby %></li>
+      <% if(check==2){ %>
+      <li>좋아하는 색상:<%= color %></li>
+      <li>좋아하는 숫자:<%= number %></li>
+      <%} %>
+    </ul>
+    <a href="/">홈으로 이동</a>
   </body>
 </html>

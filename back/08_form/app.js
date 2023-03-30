@@ -13,6 +13,7 @@ app.use(express.json()); // json 형태로 데이터를 주고 받음
 // 브라우저에서 어떤 url로 접속했을 때 어떤 페이지를 보여줄 것인가??
 
 // localhost:PORT/ 접속했을 때, index.ejs를 보여주겠다
+
 app.get("/", function (req, res) {
   const myTitle = "폼 실습을 합시다~~~";
   const myName = "강현우";
@@ -21,12 +22,40 @@ app.get("/", function (req, res) {
 
 app.get("/getForm", function (req, res) {
   console.log(req.query);
-  res.render("result", { title: "get 요청 폼 결과 확인하기", id: req.query.id, pw: req.query.pw });
+  res.render("result", {
+    title: "실습1 폼 전송 완료!",
+    name: req.query.name,
+    gender: req.query.gender,
+    year: req.query.year,
+    month: req.query.month,
+    day: req.query.day,
+    hobby: req.query.hobby,
+    check: 1,
+  });
 });
 
 app.post("/postForm", function (req, res) {
-  console.log(req.body.id2, req.body.pw2);
-  res.render("result", { title: "post 요청 폼 결과 확인하기", id: req.body.id2, pw: req.body.pw2 });
+  console.log(req.body);
+  res.render("result", {
+    title: "실습2 폼 전송 완료!",
+    name: req.body.name,
+    gender: req.body.gender,
+    year: req.body.year,
+    month: req.body.month,
+    day: req.body.day,
+    hobby: req.body.hobby,
+    color: req.body.color,
+    number: req.body.number,
+    check: 2,
+  });
+});
+
+app.get("/get_practice", function (req, res) {
+  res.render("get_practice");
+});
+
+app.get("/post_practice", function (req, res) {
+  res.render("post_practice");
 });
 
 app.listen(PORT, function () {
