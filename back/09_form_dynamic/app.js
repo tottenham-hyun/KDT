@@ -54,6 +54,11 @@ app.post("/practice_post", (req, res) => {
   }
 });
 
+app.get("/fetch", (req, res) => {
+  console.log(req.query);
+  res.send(req.query);
+});
+
 app.listen(PORT, () => {
   console.log("listen", PORT);
 });
