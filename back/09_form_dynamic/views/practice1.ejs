@@ -281,7 +281,7 @@
           data: formInfo,
         }).then((response) => {
           if (response.data.res == "success") {
-            resultBox.textContent = `${response.data.data.id}님 환영합니다!`;
+            resultBox.textContent = `${response.data.data}님 환영합니다!`;
             resultBox.style.color = "blue";
           } else {
             resultBox.textContent = "아이디 또는 비밀번호가 틀려요";
