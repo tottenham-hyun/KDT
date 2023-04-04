@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 const express = require("express");
 const app = express();
 const PORT = 8000;
@@ -25,7 +25,7 @@ const uploadDetail = multer({
       // path.basename(file.originalname, ext) => apple (확장자 제거한 파일이름만!!)
       // Date.now() => 현재 시간 (1680309346279)
       // => 1970년 1월 1일 0시 0분 0초를 기준으로 현재까지 경과된 밀리초
-      done(null, path.basename(req.body.userid,ext)+ ext);
+      done(null, path.basename(file.originalname, ext) + ext);
       // [파일명 + 현재시간.확장자] 형식으로 파일 업로드
     },
   }),
@@ -99,6 +99,15 @@ app.post("/result", uploadDetail.single("profile"), (req, res) => {
     age: req.body.age,
     image: req.file.path,
   });
+});
+
+app.get("/index2", (req, res) => {
+  res.render("index2");
+});
+
+app.post("/dynamicFile", uploadDetail.single("dynamic-userfile"), (req, res) => {
+  console.log(req.file); // 요청의 파일 정보 확인
+  res.send({ data: req.file.path }); // 클라이언트에게 파일을 응답
 });
 
 app.listen(PORT, () => {
