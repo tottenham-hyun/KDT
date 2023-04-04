@@ -1,4 +1,5 @@
 const Comment = require("../model/Comment");
+const user = require("../model/User");
 
 exports.main = (req, res) => {
   res.render("index");
