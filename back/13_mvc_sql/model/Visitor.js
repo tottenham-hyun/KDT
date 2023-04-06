@@ -30,3 +30,17 @@ exports.postVisitor = (data, cb) => {
     }
   );
 };
+
+exports.deleteVisitor = (id, cb) => {
+  console.log(id);
+
+  const sql = `delete from visitor where id=${id};`;
+  conn.query(sql, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log("visitor.js", rows);
+    cb(true);
+  });
+};
