@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿠키연습</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+      .container {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        background-color: beige;
+        border: 1px solid black;
+      }
+      .information {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 50px;
+        background-color: skyblue;
+      }
+      .check{
+        position: absolute;
+        bottom:0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>쿠키</h1>
+    <div class="container">
+      <div class="information">
+        <div>안내</div>
+        <button class="close">X</button>
+      </div>
+      <div class="small_info">종료안내</div>
+      <div class="check">
+        <input type="checkbox" id="noToday" onclick="make_cookie();">오늘은 그만보기</input>
+      </div>
+    </div>
+
+    <!-- <a href="/setCookie">쿠키 설정</a>
+    <a href="/getCookie">쿠키 확인</a>
+    <a href="/clearCookie">쿠키 제거</a> -->
+    <script>
+      const container = document.querySelector('.container')
+      const closeBtn = document.querySelector('.close')
+      const noToday = document.querySelector('#noToday')
+
+    function make_cookie(){
+        container.style.visibility="hidden"
+        axios({
+            method:'post',
+            url : '/setCookie'
+        }).then((res)=>{
+           console.log(res.data)
+        })
+      }
+
+    function get_Cookie(){
+        let maked_cookie
+         axios({
+            method:'post',
+            url : '/getCookie'
+        }).then((res)=>{
+            console.log('get: ',res.data)
+            if(!res.data){
+              console.log('보임')
+              container.style.visibility="visible"
+            }
+        })
+        
+      }
+      
+      window.onload = ()=>{
+        console.log('load')
+        get_Cookie()
+      }
+      // 닫기 버튼
+      closeBtn.addEventListener('click',()=>{
+        container.style.visibility="hidden"
+      })
+
+      
+      
+
+
+    </script>
+  </body>
+</html>
