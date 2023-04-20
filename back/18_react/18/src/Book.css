@@ -1,0 +1,11 @@
+.container {
+  width: 500px;
+  height: 400px;
+  background-color: beige;
+  text-align: center;
+}
+
+img {
+  width: 50px;
+  height: 100px;
+}

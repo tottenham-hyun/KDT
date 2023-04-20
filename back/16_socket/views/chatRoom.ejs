@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/chatRoom.css" />
+    <!-- <link rel="stylesheet" href="../static/css/chatRoom.css" /> -->
+    <script src="https://kit.fontawesome.com/65a524014b.js" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+    <script src="../static/chat.js" defer></script>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    </header>
+    <!-- 메인 -->
+    <main>
+
+      <div class="main_container">
+        <div class="imgs slide_login_img"></div>
+        <div class="chat_wrap">
+          <div class="chat_form">
+
+            <!-- <div class="line">
+              <span class="chat_box">안녕</span>
+            </div>
+            <div class="line">
+              <span class="chat_box mine">안녕</span>
+            </div> -->
+          </div>
+          <div class="input_btn">
+            <input type="text" placeholder="닉네임" id="input_text" />
+            <input type="text" placeholder="채팅 입력하세요" id="input_text" />
+            <button id="send">SEND</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
