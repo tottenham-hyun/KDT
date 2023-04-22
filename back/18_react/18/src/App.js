@@ -69,11 +69,11 @@ function App() {
       {/* <h1>State 실습</h1>
       <ClassComponent2></ClassComponent2>
       <br></br>
-      <FunctionComponent2></FunctionComponent2>
+      <FunctionComponent2></FunctionComponent2> */}
 
       <h1>이벤트 핸들러 실습</h1>
-      <Handler_ex></Handler_ex> */}
-      <Show></Show>
+      <Handler_ex></Handler_ex>
+      {/* <Show></Show> */}
     </>
   );
 }
