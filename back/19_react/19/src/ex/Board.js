@@ -1,6 +1,18 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function Board() {
+  const inputRef = useRef();
+  const inputRef2 = useRef();
+  const handleFocus = () => {
+    if (inputRef.current.value == "") {
+      inputRef.current.focus();
+    } else if (inputRef2.current.value == "") {
+      inputRef2.current.focus();
+    } else {
+      setNum((num += 1));
+      setSent([...sent, { number: num, titles: title, writers: writer }]);
+    }
+  };
   let [chk, setChk] = useState();
   let [sent, setSent] = useState([]);
   let [num, setNum] = useState(0);
@@ -19,6 +31,7 @@ function Board() {
           onChange={(e) => {
             setWriter(e.target.value);
           }}
+          ref={inputRef}
         ></input>
 
         <label style={{ marginLeft: "5px" }}>제목: </label>
@@ -27,15 +40,10 @@ function Board() {
           onChange={(e) => {
             setTitle(e.target.value);
           }}
+          ref={inputRef2}
         ></input>
 
-        <button
-          style={{ marginLeft: "5px" }}
-          onClick={() => {
-            setNum((num += 1));
-            setSent([...sent, { number: num, titles: title, writers: writer }]);
-          }}
-        >
+        <button style={{ marginLeft: "5px" }} onClick={handleFocus}>
           작성
         </button>
       </div>
